@@ -9,8 +9,9 @@
 <body bgcolor="skyblue">
     <center>
     <div style="background-color:rgb(135, 235, 157);width:300px;margin-top:100px;padding-top:40px;padding-bottom:50px">
-     <form action="registercheck/">   
-        <h2>login</h2>
+     <form action="{% url 'registerpage'%}" method="post">   
+        {%csrf_token%}
+        <h2>register</h2>
         <input name="username" type="text" placeholder="username" style="width:200px;height:25px;margin:5px;" required><br>
         <input name="fname" type="text" placeholder="firstname" style="width:200px;height:25px;margin:5px;" required><br>
         <input name="lname" type="text" placeholder="lastname" style="width:200px;height:25px;margin:5px;" required><br>
@@ -18,8 +19,10 @@
         <input name="pas" type="password" placeholder="password" style="width:200px;height:25px;margin:5px;" required><br>
         <input name="repas" type="password" placeholder="repassword" style="width:200px;height:25px;margin:5px;" required><br><br>
         <button type="submit" style="width:200px;height:25px;color:white;background-color:red">submit</button>
-    </form>
-    </div>
+        </form>
+        <br><br>
+        <font color="red">{{na}}</font>
+        </div>
     </center>
 </body>
 </html>
